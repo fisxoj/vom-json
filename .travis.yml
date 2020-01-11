@@ -15,9 +15,9 @@ jobs:
     #     - docker run --rm -it -v $PWD:/work:Z parentheticalenterprises/sbcl-quicklisp-rove sbcl --non-interactive --eval "(asdf:test-system :vom-json")
     - name: update docs
       before_script:
-        - docker pull fisxoj/coo:v1
+        - docker pull quay.io/fisxoj/coo:v1
       script:
-        - docker run --rm -it -v $PWD:/work:Z fisxoj/coo:v1
+        - docker run --rm -it -v $PWD:/work:Z quay.io/fisxoj/coo:v1
       deploy:
         provider: pages:git
         edge: true
