@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>vom-json
+
+ package</title>
+</head>
+<body>
+<div id="vom-json-package" class="document"><h1 class="title"><tt class="docutils literal">
+<span class="pre">vom-json</span></tt> package</h1>
+<p><a class="reference" href="index.html"><span>&lt;&lt; back to vom-json index</span></a></p>
+<p>Exported symbols:</p>
+<div id="functions" class="section"><h2><a name="functions">Functions</a></h2>
+<a id="function-disable-json-formatter" class="target" name="function-disable-json-formatter"></a><div id="disable-json-formatter" class="section"><h3><a name="disable-json-formatter"><tt class="docutils literal">
+<span class="pre">disable-json-formatter</span></tt></a></h3>
+<p>The inverse of <a class="reference ref-function" href="vom-json.html#function__enable-json-formatter"><span class="ref-function">enable-json-formatter</span></a>.</p>
+<a id="function-enable-json-formatter" class="target" name="function-enable-json-formatter"></a></div>
+<div id="enable-json-formatter" class="section"><h3><a name="enable-json-formatter"><tt class="docutils literal">
+<span class="pre">enable-json-formatter</span></tt></a></h3>
+<p>Changes <a class="reference ref-variable" href="vom.html#variable__*log-formatter*"><span class="ref-variable">vom:*log-formatter*</span></a> to <a class="reference ref-function" href="vom-json.html#function__json-formatter"><span class="ref-function">json-formatter</span></a>, preserving the current log formatter for <a class="reference ref-function" href="vom-json.html#function__disable-json-formatter"><span class="ref-function">disable-json-formatter</span></a> to restore, later.</p>
+<a id="function-json-formatter" class="target" name="function-json-formatter"></a></div>
+<div id="json-formatter" class="section"><h3><a name="json-formatter"><tt class="docutils literal">
+<span class="pre">json-formatter</span></tt></a></h3>
+<p><tt class="docutils literal">
+<span class="pre">(FORMAT-STR</span> <span class="pre">LEVEL-STR</span> <span class="pre">PACKAGE-KEYWORD</span> <span class="pre">ARGS)</span></tt></p>
+<p>The formatter which produces logs in json.</p>
+<p>Has fields:</p>
+<ul>
+<li><p class="first last"><tt class="docutils literal">
+<span class="pre">_logLevel</span></tt>: The log level, eg. warn, info, &amp;c.</p>
+</li>
+<li><p class="first last"><tt class="docutils literal">
+<span class="pre">msg</span></tt>: The formatted message.</p>
+</li>
+<li><p class="first last"><tt class="docutils literal">
+<span class="pre">_tags</span></tt>: Any tags included by <a class="reference ref-macro" href="vom-json.html#macro__with-tags"><span class="ref-macro">with-tags</span></a> forms.</p>
+</li>
+<li><p class="first last"><tt class="docutils literal">
+<span class="pre">_package</span></tt>: The package the log message originates from.</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="macros" class="section"><h2><a name="macros">Macros</a></h2>
+<a id="macro-with-json-logging" class="target" name="macro-with-json-logging"></a><div id="with-json-logging" class="section"><h3><a name="with-json-logging"><tt class="docutils literal">
+<span class="pre">with-json-logging</span></tt></a></h3>
+<p><tt class="docutils literal">
+<span class="pre">(&amp;BODY</span> <span class="pre">BODY)</span></tt></p>
+<p>Sets <a class="reference" href="https://github.com/orthecreedence/vom"><span>vom</span></a>'s log format to json for the body of the macro.  You could, for example wrap the whole execution context of an app with this to ensure the app uses json logging but doesn't interfere with... I dunno... another app running in the same image that you wan to use a different log format for some reason?  It just seems right to include a <tt class="docutils literal">
+<span class="pre">WITH-...</span></tt> macro in a lisp library.</p>
+<a id="macro-with-tags" class="target" name="macro-with-tags"></a></div>
+<div id="with-tags" class="section"><h3><a name="with-tags"><tt class="docutils literal">
+<span class="pre">with-tags</span></tt></a></h3>
+<p><tt class="docutils literal">
+<span class="pre">((&amp;REST</span> <span class="pre">TAGS)</span> <span class="pre">&amp;BODY</span> <span class="pre">BODY)</span></tt></p>
+<p>A nestable macro to allow adding tags to log messages.  Any log messages printed inside a <a class="reference ref-macro" href="vom-json.html#macro__with-tags"><span class="ref-macro">with-tags</span></a> call should have those tags in the <tt class="docutils literal">
+<span class="pre">tags</span></tt> array.</p>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Sat, 11 Jan 2020 03:04:06 .
+</div>
+</div>
+</body>
+</html>
