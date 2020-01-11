@@ -13,12 +13,14 @@ vom-json is a complementary library to `vom <https://github.com/orthecreedence/v
 
 You can use it two ways:
 
-1. Wrap the body of your program in it using :macro:`vom-json:with-json-logging`::
+Wrap the body of your program in it using :macro:`vom-json:with-json-logging`::
+
   (vom-json:with-json-logging
     (vom:error "Oh noes!"))
   ;; => {"_logLevel":"error","msg":"Oh noes!","_tags":[],"_package":"common-lisp-user"}
 
-2. Enable the logger globally::
+Enable the logger globally::
+
   (vom-json:enable-json-logging)
 
 This project is extremely inspired by `log4cl-json <https://github.com/40ants/log4cl-json/>`_.
