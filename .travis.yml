@@ -1,4 +1,5 @@
 language: lisp
+os: linux
 
 services:
   - docker
