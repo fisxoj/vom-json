@@ -1,0 +1,25 @@
+language: lisp
+
+services:
+  - docker
+
+jobs:
+  include:
+    # - name: unit test
+    #   stage: test
+    #   before_script:
+    #     - docker pull parentheticalenterprises/sbcl-quicklisp-rove
+    #     - docker run parentheticalenterprises/sbcl-quicklisp-rove sbcl --non-interactive --eval "(ql:quickload :vom-json)"
+    #   script:
+    #     - docker run --rm -it -v $PWD:/work:Z parentheticalenterprises/sbcl-quicklisp-rove sbcl --non-interactive --eval "(asdf:test-system :vom-json")
+    - name: update docs
+      before_script:
+        - docker pull fisxoj/coo:v1
+      script:
+        - docker run --rm -it -v $PWD:/work:Z fisxoj/coo:v1
+      deploy:
+        provider: pages:git
+        edge: true
+        local_dir: docs
+        on:
+          branch: master
