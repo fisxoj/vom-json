@@ -6,4 +6,5 @@
                "vom")
   :components ((:file "vom-json"))
   :description "A json-formatted logger for vom"
+  :source-control (:git "https://github.com/fisxoj/vom-json.git")
   :long-description #.(uiop:read-file-string #P"README.rst"))
