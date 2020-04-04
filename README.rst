@@ -9,7 +9,7 @@
 :Source: `https://github.com/fisxoj/vom-json <https://github.com/fisxoj/vom-json>`_
 :Docs:  `https://fisxoj.github.io/vom-json/ <https://fisxoj.github.io/vom-json/>`_
 
-vom-json is a complementary library to `vom <https://github.com/orthecreedence/vom>`_, which changes the logger syntax to something like `lambda-log <https://github.com/KyleRoss/node-lambda-log/>`_ making it arguably a more useful format in cloud environments like AWS.
+vom-json is a complementary library to `vom <https://github.com/orthecreedence/vom>`_, which changes the logger syntax to something like `lambda-log <https://github.com/KyleRoss/node-lambda-log/>`_ which outputs its log messages in the JSON format.  In some environments like AWS insights, this makes the log data more searchable.
 
 You can use it two ways:
 
