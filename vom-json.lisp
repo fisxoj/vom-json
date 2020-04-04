@@ -27,7 +27,7 @@ Has fields:
 
   (json:with-output-to-string*
       (json:with-object
-          (json:write-key-value "_logLevel" (string-downcase level-str))
+        (json:write-key-value "_logLevel" (string-downcase level-str))
         (json:write-key-value "msg" (apply #'format nil format-str args))
         (json:write-key-value "_tags" (json:with-array
                                           (dolist (item *tags*)
