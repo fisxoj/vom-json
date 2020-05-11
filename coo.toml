@@ -1,0 +1,5 @@
+[plugins.github]
+project = "fisxoj/vom-json"
+
+[references]
+vom = "https://github.com/orthecreedence/vom/"
