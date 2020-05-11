@@ -17,7 +17,7 @@ Wrap the body of your program in it using :macro:`vom-json:with-json-logging`::
 
   (vom-json:with-json-logging
     (vom:error "Oh noes!"))
-  ;; => {"_logLevel":"error","msg":"Oh noes!","_tags":[],"_package":"common-lisp-user"}
+  ;; => {"_logLevel":"error","_timestamp":"2020-05-11T18:23:58.569136Z","msg":"Oh noes!","_tags":[],"_package":"common-lisp-user"}
 
 Enable the logger globally::
 

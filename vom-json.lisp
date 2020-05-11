@@ -23,6 +23,7 @@ Has fields:
 * ``_logLevel``: The log level, eg. warn, info, &c.
 * ``msg``: The formatted message.
 * ``_tags``: Any tags included by :macro:`with-tags` forms.
+* ``_timestamp``: rfc3399 timestamp.
 * ``_package``: The package the log message originates from."
 
   (json:with-output-to-string*

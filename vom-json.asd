@@ -1,7 +1,7 @@
 (defsystem vom-json
   :author "Matt Novenstern <fisxoj@gmail.com>"
   :license "MIT"
-  :version "1"
+  :version "2"
   :depends-on ("jonathan"
                "vom")
   :components ((:file "vom-json"))
