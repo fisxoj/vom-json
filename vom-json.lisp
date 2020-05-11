@@ -28,6 +28,7 @@ Has fields:
   (json:with-output-to-string*
       (json:with-object
         (json:write-key-value "_logLevel" (string-downcase level-str))
+        (json:write-key-value "_timestamp" (local-time:format-rfc3339-timestring nil (local-time:now) :timezone local-time:+utc-zone+))
         (json:write-key-value "msg" (apply #'format nil format-str args))
         (json:write-key-value "_tags" (json:with-array
                                           (dolist (item *tags*)
