@@ -3,6 +3,7 @@
   :license "MIT"
   :version "2"
   :depends-on ("jonathan"
+               "local-time"
                "vom")
   :components ((:file "vom-json"))
   :description "A json-formatted logger for vom"
