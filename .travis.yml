@@ -53,12 +53,15 @@ jobs:
     - <<: *test
       env:
         - LISP=ecl
-    - <<: *test
-      env:
-        - LISP=allegro
+    # - <<: *test
+    #   env:
+    #     - LISP=allegro
     - <<: *test
       env:
         - LISP=abcl
+    - <<: *test
+      env:
+        - LISP=clisp
     - name: update docs
       before_script:
         - docker pull quay.io/fisxoj/coo:latest
