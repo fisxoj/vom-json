@@ -12,6 +12,7 @@
 
 
 (deftest with-json-logging
+  (vom:config :vom-json/test :info)
   (testing "the vom formatter"
     (ok (not (eq vom:*log-formatter* #'vom-json:json-formatter))
         "is initially not the json formatter.")
@@ -22,6 +23,7 @@
         "is not the json formatter after the macro body.")))
 
 (deftest json-formatter
+  (vom:config :vom-json/test :info)
   (vom-json:with-json-logging
     (ok (jojo:parse (with-captured-output () (log:info "hello")) :as :alist)
         "outputs valid json.")
@@ -44,6 +46,7 @@
               "the package is correct."))))))
 
 (deftest with-tags
+  (vom:config :vom-json/test :info)
   (vom-json:with-json-logging
     (vom-json:with-tags ("this" "that")
       (ok (equal (cdr (assoc "_tags" (jojo:parse (with-captured-output () (log:info "hello")) :as :alist)
